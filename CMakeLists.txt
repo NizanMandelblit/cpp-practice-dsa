@@ -27,6 +27,12 @@ target_link_libraries(LinkedListTest gtest gtest_main)
 add_executable(StackTest tests/StackTest.cpp src/Stack.cpp)
 target_link_libraries(StackTest gtest gtest_main)
 
+# Add BinarySearchTreeTest executable and link GoogleTest libraries
+add_executable(BinarySearchTreeTest tests/BinarySearchTreeTest.cpp src/BinarySearchTree.cpp)
+target_link_libraries(BinarySearchTreeTest gtest gtest_main)
+
 # Register the tests with CTest
 add_test(NAME LinkedListTest COMMAND LinkedListTest)
 add_test(NAME StackTest COMMAND StackTest)
+add_test(NAME BinarySearchTreeTest COMMAND BinarySearchTreeTest)
+
