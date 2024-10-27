@@ -13,9 +13,9 @@ public:
 private:
     struct Node {
         int data;
-        Node* next;
+        Node* next = nullptr;
     };
-    Node* top;
+    Node* top = nullptr;
 };
 
 #endif // STACK_H

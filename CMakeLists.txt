@@ -16,8 +16,7 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 # Add main DSA file and test files
-add_executable(DSA_Main src/main.cpp src/LinkedList.cpp)
-add_executable(DSA_Tests tests/test_dsa.cpp src/LinkedList.cpp)
+add_executable(DSA_Tests tests/test_dsa.cpp src/LinkedList.cpp src/Stack.cpp)
 
 # Link Google Test with DSA_Tests
 target_link_libraries(DSA_Tests gtest_main)
