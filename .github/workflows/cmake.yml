@@ -1,0 +1,42 @@
+name: CMake Build and Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Install dependencies
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y cmake g++ libgtest-dev
+
+      - name: Install gtest
+        uses: MarkusJx/googletest-installer@v1.1
+
+      # Create build directory and run CMake
+      - name: Configure CMake
+        run: |
+          mkdir -p build
+          cd build
+          cmake -DCMAKE_BUILD_TYPE=Debug ..
+      
+      # Build the project
+      - name: Build with make
+        run: |
+          cd build
+          make
+
+      # Run tests
+      - name: Run Tests
+        run: |
+          cd build
+          ctest --verbose --output-on-failure
