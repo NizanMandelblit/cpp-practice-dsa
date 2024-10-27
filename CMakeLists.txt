@@ -5,7 +5,7 @@ project(DSA_Practice)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_BUILD_TYPE Debug)
 
-# Add Google Test
+# Add Google Test using FetchContent
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -15,10 +15,14 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-# Add main DSA file and test files
-add_executable(DSA_Tests tests/test_dsa.cpp src/LinkedList.cpp src/Stack.cpp)
+# Add LinkedListTest executable and link GoogleTest libraries
+add_executable(LinkedListTest tests/LinkedListTest.cpp src/LinkedList.cpp)
+target_link_libraries(LinkedListTest gtest gtest_main)
 
-# Link Google Test with DSA_Tests
-target_link_libraries(DSA_Tests gtest_main)
-add_test(NAME DSA_Tests COMMAND DSA_Tests)
+# Add StackTest executable and link GoogleTest libraries
+add_executable(StackTest tests/StackTest.cpp src/Stack.cpp)
+target_link_libraries(StackTest gtest gtest_main)
 
+# Register the tests with CTest
+add_test(NAME LinkedListTest COMMAND LinkedListTest)
+add_test(NAME StackTest COMMAND StackTest)
