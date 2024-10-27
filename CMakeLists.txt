@@ -5,6 +5,10 @@ project(DSA_Practice)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_BUILD_TYPE Debug)
 
+#include the CTest CMake module
+include (CTest)
+
+
 # Add Google Test using FetchContent
 include(FetchContent)
 FetchContent_Declare(

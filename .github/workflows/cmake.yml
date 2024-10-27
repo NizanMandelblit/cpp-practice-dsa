@@ -17,7 +17,7 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y cmake g++ libgtest-dev
+        run: sudo apt-get update && sudo apt-get install -y cmake g++ libgtest-dev valgrind
 
       - name: Install gtest
         uses: MarkusJx/googletest-installer@v1.1
@@ -36,7 +36,7 @@ jobs:
           make
 
       # Run tests
-      - name: Run Tests
+      - name: Run Tests with memory leaks check
         run: |
           cd build
-          ctest --verbose --output-on-failure
+          ctest -T memcheck --output-on-failure --overwrite MemoryCheckCommandOptions="--leak-check=full --error-exitcode=1" --verbose
