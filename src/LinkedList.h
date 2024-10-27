@@ -14,9 +14,9 @@ public:
 private:
     struct Node {
         int data;
-        Node* next;
+        Node* next = nullptr;
     };
-    Node* head;
+    Node* head = nullptr;
 };
 
 #endif // LINKEDLIST_H
