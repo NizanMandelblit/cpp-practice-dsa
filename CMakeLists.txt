@@ -31,8 +31,13 @@ target_link_libraries(StackTest gtest gtest_main)
 add_executable(BinarySearchTreeTest tests/BinarySearchTreeTest.cpp src/BinarySearchTree.cpp)
 target_link_libraries(BinarySearchTreeTest gtest gtest_main)
 
+# Add HashTableTest executable and link GoogleTest libraries
+add_executable(HashTableTest tests/HashTableTest.cpp src/HashTable.cpp)
+target_link_libraries(HashTableTest gtest gtest_main)
+
 # Register the tests with CTest
 add_test(NAME LinkedListTest COMMAND LinkedListTest)
 add_test(NAME StackTest COMMAND StackTest)
 add_test(NAME BinarySearchTreeTest COMMAND BinarySearchTreeTest)
+add_test(NAME HashTableTest COMMAND HashTableTest)
 
