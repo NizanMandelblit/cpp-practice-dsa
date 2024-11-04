@@ -26,18 +26,17 @@ ctest -T memcheck --output-on-failure --overwrite MemoryCheckCommandOptions="--l
 Plan is to implement and test the following : 
 
 Data structers :
-1. Linked List
-2. Stack
-3. Queue
-4. HashTable
-5. Binary Search Tree
-6. Heap
-7. Graphs
+1. ✔️ Linked List (XXX: add reverse)
+2. ✔️ Stack
+3. ⬜ Queue
+4. ✔️ HashTable
+5. ✔️ Binary Search Tree
+6. ✔️ Heap
+7. ✔️ Graphs
 
 Algorithms :
-1. Breadth-First Search (Graphs)
-2. Depth-First Search (Graphs)
-3. Binary Search
-4. Merge Sort
-5. Quick Sort
-
+1. ✔️ Breadth-First Search (Graphs)
+2. ✔️ Depth-First Search (Graphs)
+3. ✔️ Binary Search
+4. ✔️ Merge Sort
+5. ⬜ Quick Sort
