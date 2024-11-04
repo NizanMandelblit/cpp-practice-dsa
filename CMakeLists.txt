@@ -47,6 +47,10 @@ target_link_libraries(GraphTest gtest gtest_main)
 add_executable(MergeSortTest tests/MergeSortTest.cpp src/MergeSort.cpp)
 target_link_libraries(MergeSortTest gtest gtest_main)
 
+# BinarySearchTest
+add_executable(BinarySearchTest tests/BinarySearchTest.cpp src/BinarySearch.cpp)
+target_link_libraries(BinarySearchTest gtest gtest_main)
+
 
 # Register the tests with CTest
 add_test(NAME LinkedListTest COMMAND LinkedListTest)
@@ -56,4 +60,5 @@ add_test(NAME HashTableTest COMMAND HashTableTest)
 add_test(NAME HeapTest COMMAND HeapTest)
 add_test(NAME GraphTest COMMAND GraphTest)
 add_test(NAME MergeSortTest COMMAND MergeSortTest)
+add_test(NAME BinarySearchTest COMMAND BinarySearchTest)
 
